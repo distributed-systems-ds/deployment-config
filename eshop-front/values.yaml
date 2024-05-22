@@ -1,7 +1,7 @@
 name: eshop-front
 namespace: eshop
 replicas: 1
-image: danieljaraba/eshop-front:22c8db7b6ee4a611aa5d1e863547b20e0ec0f86f
+image: danieljaraba/eshop-front:49547651bc7516bf84fda8ad711e2c798acf8443
 containerPort: 80
 service:
   portname: http
