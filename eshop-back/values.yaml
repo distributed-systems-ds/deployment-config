@@ -1,7 +1,7 @@
 name: eshop-back
 namespace: eshop
 replicas: 1
-image: danieljaraba/eshop-back:v1.0.0
+image: danieljaraba/eshop-back:290d1170fcf253483ef7edda89a8c5ccb6343b76
 containerPort: 8080
 service:
   portname: http
