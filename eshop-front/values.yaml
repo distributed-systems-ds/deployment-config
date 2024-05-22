@@ -1,0 +1,13 @@
+name: eshop-front
+namespace: eshop
+replicas: 1
+image: danieljaraba/eshop-front:latest
+containerPort: 80
+service:
+  portname: http
+  port: 80
+  targetPort: 80
+
+env:
+  - name: VITE_API_URL
+    value: http://localhost:8080

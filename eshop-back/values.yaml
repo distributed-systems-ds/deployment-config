@@ -1,0 +1,19 @@
+name: eshop-back
+namespace: eshop
+replicas: 1
+image: danieljaraba/eshop-back:a9e829756ae1650cd9c7f94cc0ac32cb273b7a47
+containerPort: 8080
+service:
+  portname: http
+  port: 8080
+  targetPort: 8080
+
+env:
+  - name: DATABASE_NAME
+    value: eshop
+  - name: DATABASE_PASSWORD
+    value: postgres
+  - name: DATABASE_USER
+    value: postgres
+  - name: DATABASE_URL
+    value: eshop-db:5432

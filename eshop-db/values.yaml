@@ -1,0 +1,15 @@
+name: eshop-db
+namespace: eshop
+replicas: 1
+image: postgres:latest
+containerPort: 5432
+service:
+  portname: db
+  port: 5432
+  targetPort: 5432
+
+env:
+  - name: POSTGRES_DB
+    value: eshop
+  - name: POSTGRES_PASSWORD
+    value: postgres
