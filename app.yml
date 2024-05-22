@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: eshop
+  namespace: argocd
+spec:
+  description: Project for eshop application
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: argocd
+      server: '*'
+  clusterResourceWhitelist:
+    - group: ''
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argocd-private-repo-app-config
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: "git"
+  url: "https://github.com/distributed-systems-ds/deployment-config.git"
