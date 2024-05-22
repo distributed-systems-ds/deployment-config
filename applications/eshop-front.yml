@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: eshop-front
+  namespace: argocd
+spec:
+  project: eshop
+  source:
+    path: eshop-front
+    repoURL: https://github.com/distributed-systems-ds/deployment-config.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    server: https://kubernetes.default.svc
